@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>testando jquery</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+  </head>
+  <style>
+    .ul {
+      padding: 0;
+      margin: 0;
+      list-style: none
+    }
+
+    .li-even {
+      padding: 10px;
+      background: #ccc
+    }
+
+    .li-odd {
+      padding: 10px;
+      background: #aaa;
+      color: #fff
+    }
+
+    .li-hover{
+      background: #fff;
+      color: #000;
+      border: 1px solid #000
+    }
+
+
+  </style>
+  <body class="container">
+    <div id="jquery"></div>
+    <div class="jquery-version-3"></div>
+    <div class="jquery"></div>
+    <div></div>
+
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <script src="jquery-3.2.1.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      let lihover = function(){
+        $(this).addClass('li-hover')
+      }
+      let lihoverOut = function(){
+        $(this).removeClass('li-hover')
+      }
+
+      $('li').hover(lihover, lihoverOut);
+      $('div').text('tag');
+      $('#jquery').text('id');
+      $('.jquery').text('class');
+      $('div[class*="jquery"]').text('class');
+      $('ul').css({'padding':0,'margin':0, 'list-style': 'none'});
+      $('li').text('impar').css('padding','10px');
+      $('li:even').text('impar').css('background','#ccc');
+      $('li:even').text('impar').addClass('li-even');
+      $('li:odd').text('par').css({'background':'#aaa','color':'#fff'});
+      $('li:odd').text('par').addClass('li-odd');
+    </script>
+</html>
